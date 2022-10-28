@@ -17,8 +17,12 @@ app.use(express.urlencoded({extended:false}))
 //   }));
 // app.use(bodyParser.json());
 
-// app.use('/orders',require('./routes/orderRoutes'));
+app.use('/',require('./routes/customerRoutes'));
 app.use('/',require('./routes/orderRoutes'));
+app.use('/',require('./routes/hotelOrderRoutes'));
+app.use('/',require('./routes/flightOrderRoutes'));
+app.use('/',require('./routes/hotelOwnerRoutes'));
+app.use('/',require('./routes/flightOwnerRoutes'));
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
